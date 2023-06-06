@@ -1,0 +1,29 @@
+/* src/componentes/Rodape/index.js */
+.logoFooter ul li img{
+  width: 600px;
+  padding-right: 300px;
+}
+
+.footerPage {
+  background: #D3D3D3;
+  color: #FFF;
+  padding: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerPage ul li {
+  display: inline-block;
+  margin-right: 32px;
+}
+
+.footerPage ul li a img {
+  width: 30px;
+  height: 30px;
+  padding:  10px;
+}
+
+.footerPage ul li:last-child {
+  margin-right: 0;
+}
