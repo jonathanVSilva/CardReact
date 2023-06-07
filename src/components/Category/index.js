@@ -1,9 +1,9 @@
 import Collaborator from '../Collaborator'
-import './Team.css'
+import './Category.css'
 
-const Team = (props) => {
+const Category = (props) => {
   return(
-    (props.collaborators.length > 0) && <section className='team' style={{backgroundColor: props.colorSecondary}}>
+    (props.collaborators.length > 0) && <section className='category' style={{backgroundColor: props.colorSecondary}}>
        <h3 style={{borderColor: props.colorPrimary}}>{props.name}</h3>
        <div className='collaborators'>
          {props.collaborators.map(collaborator => <Collaborator 
@@ -17,4 +17,4 @@ const Team = (props) => {
   )
 }
 
-export default Team
+export default Category

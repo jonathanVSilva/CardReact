@@ -1,44 +1,44 @@
 import { useState } from 'react';
 import Banner from './components/Banner'
 import Form from './components/Form'
-import Team from './components/Team';
+import Category from './components/Category';
 import Footer from './components/Footer'
 
 function App() {
 
-  const teams = [
+  const categorys = [
     {
-      name: 'Progamação',
+      name: 'Entreterimento',
       colorPrimary: '#57C278',
       colorSecondary: '#D9F7E9'
     },
     {
-      name: 'Front-End',
+      name: 'Futebol',
       colorPrimary: '#82CFFA',
       colorSecondary: '#E8F8FF'
     },
     {
-      name: 'Data Science',
+      name: 'Música',
       colorPrimary: '#A6D157',
       colorSecondary: '#F0F8E2'
     },
     {
-      name: 'Devops',
+      name: 'Novela',
       colorPrimary: '#E06B69',
       colorSecondary: '#FDE7E8'
     },
     {
-      name: 'UX e Design',
+      name: 'Dança',
       colorPrimary: '#DB6EBF',
       colorSecondary: '#FAE9F5'
     },
     {
-      name: 'Mobile',
+      name: 'Fotografia',
       colorPrimary: '#FFBA05',
       colorSecondary: '#FFF5D9'
     },
     {
-      name: 'Inovação e Gestão',
+      name: 'Filme',
       colorPrimary: '#FF8A29',
       colorSecondary: '#FFEEDF'
     }
@@ -46,19 +46,18 @@ function App() {
   const [collaborators, setCollaborators] = useState([])
 
   const whenNewCollaboratorAdd = (collaborator) =>{
-    debugger
     setCollaborators([...collaborators, collaborator])
   }
   return (
     <div className="App"> 
       <Banner />
-      <Form teams={teams.map(team => team.name)} registeredCollaborator={collaborator => whenNewCollaboratorAdd(collaborator)} />
-      {teams.map(team => <Team 
-        key={team.name} 
-        name={team.name} 
-        colorPrimary={team.colorPrimary}
-        colorSecondary={team.colorSecondary}
-        collaborators={collaborators.filter(collaborator => collaborator.team === team.name)}
+      <Form categorys={categorys.map(category => category.name)} registeredCollaborator={collaborator => whenNewCollaboratorAdd(collaborator)} />
+      {categorys.map(category => <Category 
+        key={category.name} 
+        name={category.name} 
+        colorPrimary={category.colorPrimary}
+        colorSecondary={category.colorSecondary}
+        collaborators={collaborators.filter(collaborator => collaborator.category === category.name)}
       />)}
       <Footer />
     </div>

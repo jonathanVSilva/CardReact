@@ -10,7 +10,7 @@ const Form = (props) => {
   const [name, setName] = useState('')
   const [role, setRole] = useState('')
   const [image, setImage] = useState('')
-  const [team, setTeam] = useState('')
+  const [category, setCategory] = useState('')
 
   const whenSave = (evento) => {
     evento.preventDefault()
@@ -18,18 +18,18 @@ const Form = (props) => {
       name,
       role,
       image,
-      team 
+      category 
     })
     setName('')
     setRole('')
     setImage('')
-    setTeam('')
+    setCategory('')
   }
 
   return (
     <section className="form-content">
       <form onSubmit={whenSave}>
-        <h2>Preencha os dados para criar o card do colaborador</h2>
+        <h2>Preencha os dados para criar o card do seu ídolo</h2>
         <TextField 
           obrigatorio={true} 
           label="Nome" 
@@ -52,10 +52,10 @@ const Form = (props) => {
         />
         <DropdownList 
           obrigatorio={true} 
-          label="Time" 
-          itens={props.teams}
-          valor={team}
-          whenChange={valor => setTeam(valor)}
+          label="Categoria" 
+          itens={props.categorys}
+          valor={category}
+          whenChange={valor => setCategory(valor)}
         />
         <Button>
           Criar Card
